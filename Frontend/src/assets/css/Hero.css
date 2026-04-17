@@ -1,0 +1,35 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  height: 100%;
+  position: absolute;
+  left: 50px;
+  top: 170px;
+}
+.overlay h1 {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+.overlay p {
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 30px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+.ClientCard{
+  right: 40px;
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+}
