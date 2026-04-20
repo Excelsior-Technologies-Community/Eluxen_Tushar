@@ -1,0 +1,75 @@
+.best-services {
+    background-color: #000;
+    color: #fff;
+}
+.servicesHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 0 40px;
+}
+
+.servicesHeading h1 {
+    font-size: 60px;
+    width: 60%;
+}
+.servicesHeading p {
+    font-size: 18px;
+    width: 70%;
+}
+.best-services span{
+    color: #ffd051;;
+    padding: 0 40px;
+}
+
+
+
+.services-container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.serviceCard {
+  position: relative;
+  width: 260px;
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.serviceOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.edit-btn {
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 8px;
+}

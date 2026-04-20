@@ -8,6 +8,7 @@ const ContactButton = ({
   iconColor = "#fff",
   hoverColor = "#3460fc",
   hoverText = "#fff",
+  
   onClick
 }) => {
   const [hover, setHover] = useState(false);
@@ -45,7 +46,7 @@ const ContactButton = ({
             
         }}
       >
-        <img src="https://html.designingmedia.com/eluxen/assets/images/up-right-arrow.png" alt="" />
+        <img src="https://html.designingmedia.com/eluxen/assets/images/up-right-arrow.png" alt=""/>
       </span>
     </button>
   );

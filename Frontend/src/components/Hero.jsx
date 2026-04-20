@@ -3,6 +3,7 @@ import axios from "axios";
 import "../assets/css/Hero.css";
 import ContactButton from "./ContactButton";
 import ClientCard from "./ClientCard";
+import HeroImg from "./HeroImg";
 
 const Hero = () => {
   const [hero, setHero] = useState(null);
@@ -17,12 +18,13 @@ const Hero = () => {
   if (!hero) return <h2>Loading...</h2>;
 
   return (
+    <>
     <section
       className="hero"
       style={{
         background: `url(${hero.bgImage}) no-repeat center/cover`,
       }}
-    >
+      >
       <div className="overlay">
         <h1 style={{ whiteSpace: "pre-line" }}>{hero.title}</h1>
         <p>{hero.subtitle}</p>
@@ -40,7 +42,12 @@ const Hero = () => {
       <div className="ClientCard" >
       <ClientCard />
     </div>
+    
     </section>
+    <div>
+      <HeroImg />
+    </div>
+            </>
   );
 };
 

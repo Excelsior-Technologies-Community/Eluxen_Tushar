@@ -33,3 +33,15 @@
   top: 90%;
   transform: translateY(-50%);
 }
+.hero-img {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.hero-img img {
+  width: 93.5%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
