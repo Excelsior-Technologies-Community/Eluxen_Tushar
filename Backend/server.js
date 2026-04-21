@@ -4,8 +4,11 @@ const cors = require("cors");
 
 const heroRoutes = require("./routes/heroRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
+const path = require("path");
+
 
 const app = express();
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(cors());
 app.use(express.json());
 

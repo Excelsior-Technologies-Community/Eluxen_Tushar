@@ -1,0 +1,38 @@
+.dashboard-container {
+  padding: 30px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 20px;
+}
+
+/* cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+}
