@@ -11,6 +11,9 @@ import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/Dashboard";
 import AdminServices from "./admin/AdminServices";
 import AdminHero from "./admin/AdminHero";
+import CounterSection from './components/CounterSection';
+import AboutUs from './components/AboutUs';
+import AdminAbout from './admin/AdminAbout';
 
 function App() {
   return (
@@ -26,6 +29,8 @@ function App() {
               <Navbar />
               <Hero />
               <BestServices />
+              <CounterSection />
+              <AboutUs />
             </>
           }
         />
@@ -41,6 +46,9 @@ function App() {
 
           {/* Services Section */}
           <Route path="services" element={<AdminServices />} />
+
+          {/* About Us Section */}
+          <Route path="/admin/about" element={<AdminAbout />} />
 
         </Route>
 

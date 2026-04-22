@@ -1,0 +1,114 @@
+.admin-about-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.admin-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #3c5dfc;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(60,93,252,0.1);
+}
+
+/* Quill editor */
+.ql-container {
+  border-radius: 10px !important;
+  min-height: 150px;
+}
+
+/* Upload */
+.file-upload {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.file-upload:hover {
+  border-color: #3c5dfc;
+  background: #f5f7ff;
+}
+
+/* Preview */
+.preview-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.preview-box {
+  position: relative;
+}
+
+.preview-box img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #eee;
+}
+
+/* Button */
+.submit-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #3c5dfc, #6a82fb);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(60,93,252,0.2);
+}
+
+.custom-quill .ql-toolbar {
+  background: #f8f9ff;
+  border-radius: 12px 12px 0 0;
+}
+
+.custom-quill .ql-container {
+  border-radius: 0 0 12px 12px;
+  min-height: 180px;
+  background: #fff;
+}
+
+.custom-quill .ql-editor {
+  font-size: 15px;
+  color: #222;
+}

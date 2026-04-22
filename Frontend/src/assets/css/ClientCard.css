@@ -1,4 +1,4 @@
-.card {
+.Clientcard {
   width: 300px;
   padding: 30px;
   border-radius: 20px;
@@ -26,7 +26,7 @@
 }
 
 /* title */
-.card h1 {
+.Clientcard h1 {
   font-size: 60px;
   margin: 19px 0;
 }
@@ -37,7 +37,7 @@
 }
 
 /* line */
-.card hr {
+.Clientcard hr {
   border: 0.5px solid rgba(255,255,255,0.3);
   margin: 20px 0;
 }

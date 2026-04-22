@@ -3,7 +3,7 @@ import "../assets/css/ClientCard.css";
 
 const ClientCard = () => {
   return (
-    <div className="card">
+    <div className="Clientcard">
       
       {/* avatars */}
       <div className="avatars">

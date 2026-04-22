@@ -1,0 +1,40 @@
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  padding: 40px;
+}
+
+.counter-box {
+  text-align: center;
+  flex: 1;
+  border-right: 1px solid #333;
+}
+
+.counter-box:last-child {
+  border-right: none;
+}
+
+.counter-box h1 {
+  font-size: 50px;
+  color: white;
+}
+
+.counter-box h1 span {
+  color: orange;
+}
+
+.counter-box p {
+  margin-top: 10px;
+  color: #ccc;
+}
+.counter-box h1 {
+  font-size: 50px;
+  color: white;
+}
+
+.symbol {
+  color: #facc15; /* yellow */
+  margin-left: 2px;
+}
