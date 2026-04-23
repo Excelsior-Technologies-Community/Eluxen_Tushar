@@ -49,7 +49,6 @@ body {
   transition: 0.3s;
 }
 
-/* ACTIVE (BLUE TAB LIKE SCREENSHOT) */
 .menu-box .active {
   background: #2f6dfc;
 }
@@ -67,6 +66,106 @@ body {
   font-size: 20px;
   font-weight: 600;
   display: flex;
-    align-items: center;
-    gap: 20px;
+  align-items: center;
+  gap: 20px;
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* MOBILE MENU OPEN */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu li {
+  list-style: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.mobile-menu li:hover {
+  background: #2f6dfc;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .menu-box ul {
+    gap: 12px;
+  }
+
+  .menu-box li {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .phone {
+    font-size: 15px;
+  }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  .navbar {
+    top: 20px;
+  }
+
+  .menu-box {
+    display: none;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }

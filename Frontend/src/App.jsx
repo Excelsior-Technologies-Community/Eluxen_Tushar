@@ -5,23 +5,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BestServices from "./components/BestServices";
+import CounterSection from './components/CounterSection';
+import AboutUs from './components/AboutUs';
+import Pricing from './components/Pricing'; 
 
 // Admin components
 import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/Dashboard";
 import AdminServices from "./admin/AdminServices";
 import AdminHero from "./admin/AdminHero";
-import CounterSection from './components/CounterSection';
-import AboutUs from './components/AboutUs';
 import AdminAbout from './admin/AdminAbout';
+import AdminPricing from './admin/AdminPricing'; 
+import OurProcess from './components/OurProcess';
 
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
-        {/* 🌐 WEBSITE */}
+        {/*  WEBSITE */}
         <Route
           path="/"
           element={
@@ -31,29 +33,22 @@ function App() {
               <BestServices />
               <CounterSection />
               <AboutUs />
+              <OurProcess />
+              <Pricing />  
             </>
           }
         />
 
-        {/* 🔐 ADMIN PANEL */}
+        {/*  ADMIN PANEL */}
         <Route path="/admin" element={<AdminLayout />}>
-
-          {/* Dashboard */}
           <Route index element={<Dashboard />} />
-
-          {/* Hero Section */}
           <Route path="hero" element={<AdminHero />} />
-
-          {/* Services Section */}
           <Route path="services" element={<AdminServices />} />
-
-          {/* About Us Section */}
-          <Route path="/admin/about" element={<AdminAbout />} />
-
+          <Route path="about" element={<AdminAbout />} />
+          <Route path="pricing" element={<AdminPricing />} /> {/* ✅ NEW */}
         </Route>
 
       </Routes>
-
     </BrowserRouter>
   );
 }

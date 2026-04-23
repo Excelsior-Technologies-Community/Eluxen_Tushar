@@ -38,3 +38,88 @@
   color: #facc15; /* yellow */
   margin-left: 2px;
 }
+
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .counter-container {
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    gap: 0;
+  }
+
+  .counter-box {
+    flex: 1 1 33%;
+    padding: 20px 10px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  /* Remove border on last item of each row */
+  .counter-box:nth-child(3) {
+    border-right: none;
+  }
+
+  .counter-box:last-child {
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .counter-box h1 {
+    font-size: 38px;
+  }
+
+  .counter-box p {
+    font-size: 13px;
+  }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  .counter-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    gap: 0;
+  }
+
+  .counter-box {
+    flex: none;
+    padding: 24px 10px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+  }
+
+  /* 2-column grid borders */
+  .counter-box:nth-child(2n) {
+    border-right: none;
+  }
+
+  .counter-box:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .counter-box h1 {
+    font-size: 32px;
+  }
+
+  .counter-box p {
+    font-size: 12px;
+  }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .counter-container {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-box {
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .counter-box:last-child {
+    border-bottom: none;
+  }
+}

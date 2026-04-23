@@ -136,3 +136,66 @@
 .serviceCard:hover .arrow-btn {
   background: #000;
 }
+
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .servicesHeading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 30px;
+  }
+
+  .servicesHeading h1 {
+    font-size: 42px;
+    width: 100%;
+  }
+
+  .servicesHeading p {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .services-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    padding: 20px 30px;
+  }
+
+  .serviceCard {
+    height: 320px;
+  }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  .servicesHeading {
+    padding: 20px;
+  }
+
+  .servicesHeading h1 {
+    font-size: 32px;
+  }
+
+  .servicesHeading p {
+    font-size: 14px;
+  }
+
+  .best-services span {
+    padding: 0 20px;
+    display: block;
+    padding-top: 30px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    width: auto;
+  }
+
+  .serviceCard {
+    height: 280px;
+  }
+}

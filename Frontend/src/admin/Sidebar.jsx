@@ -10,6 +10,7 @@ const navItems = [
       { label: "Hero", path: "/admin/hero" },
       { label: "Services", path: "/admin/services" },
       { label: "AboutUs", path: "/admin/about" },
+      { label: "Pricing",    path: "/admin/pricing" },
     ],
   },
 ];

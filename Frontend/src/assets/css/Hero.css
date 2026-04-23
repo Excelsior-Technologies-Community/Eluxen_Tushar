@@ -45,3 +45,74 @@
   object-fit: cover;
   border-radius: 30px;
 }
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .overlay {
+    left: 30px;
+    top: 140px;
+  }
+
+  .overlay h1 {
+    font-size: 70px;
+  }
+
+  .ClientCard {
+    right: 20px;
+  }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 220px;
+  }
+
+  .overlay {
+    left: 20px;
+    right: 20px;
+    top: 100px;
+    position: relative;
+    padding-top: 100px;
+  }
+
+  .overlay h1 {
+    font-size: 42px;
+    line-height: 1.15;
+  }
+
+  .overlay p {
+    font-size: 14px;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ClientCard {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .hero-img img {
+    width: 100%;
+    border-radius: 16px;
+  }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .overlay h1 {
+    font-size: 32px;
+  }
+}

@@ -72,3 +72,28 @@
 .arrow:hover {
   background: #facc15;
 }
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+  .Clientcard {
+    width: 250px;
+    padding: 22px;
+  }
+
+  .Clientcard h1 {
+    font-size: 46px;
+  }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  .Clientcard {
+    width: 90%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .Clientcard h1 {
+    font-size: 40px;
+  }
+}
