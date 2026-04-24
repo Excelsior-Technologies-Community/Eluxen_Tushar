@@ -17,6 +17,11 @@ import AdminHero from "./admin/AdminHero";
 import AdminAbout from './admin/AdminAbout';
 import AdminPricing from './admin/AdminPricing'; 
 import OurProcess from './components/OurProcess';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
+import AdminTestimonials from './admin/AdminTestimonials';
+import AdminFAQ from './admin/AdminFAQ';
+import PremiumCare from './components/PremiumCare';
 
 function App() {
   return (
@@ -35,6 +40,9 @@ function App() {
               <AboutUs />
               <OurProcess />
               <Pricing />  
+              <Testimonials />
+              <PremiumCare />
+              <FAQ />
             </>
           }
         />
@@ -45,7 +53,9 @@ function App() {
           <Route path="hero" element={<AdminHero />} />
           <Route path="services" element={<AdminServices />} />
           <Route path="about" element={<AdminAbout />} />
-          <Route path="pricing" element={<AdminPricing />} /> {/* ✅ NEW */}
+          <Route path="pricing" element={<AdminPricing />} />
+          <Route path="testimonials" element={<AdminTestimonials />} />
+          <Route path="faq" element={<AdminFAQ />} />
         </Route>
 
       </Routes>

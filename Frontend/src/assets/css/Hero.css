@@ -13,6 +13,8 @@
 .overlay h1 {
   font-size: 100px;
   margin-bottom: 20px;
+  max-width: 700px;
+  width: 100%;
 }
 .overlay p {
   font-size: 16px;

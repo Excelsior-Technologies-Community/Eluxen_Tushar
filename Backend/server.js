@@ -7,6 +7,8 @@ const heroRoutes = require("./routes/heroRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
 const aboutRoutes = require("./routes/aboutUsRoutes");
 const pricingRoutes = require("./routes/pricingRoutes"); // ✅ NEW
+const testimonialRoutes = require("./routes/testimonialRoutes");
+const faqRoutes = require("./routes/faqRoutes");
 
 const app = express();
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
@@ -21,5 +23,7 @@ app.use("/api/services", serviceRoutes);
 app.use("/api/hero", heroRoutes);
 app.use("/api/about", aboutRoutes);
 app.use("/api/pricing", pricingRoutes); // ✅ NEW
+app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/faqs", faqRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));

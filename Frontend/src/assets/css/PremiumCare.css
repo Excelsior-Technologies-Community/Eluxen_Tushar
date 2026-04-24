@@ -1,0 +1,56 @@
+.premium-care {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 180px 60px;
+  gap: 40px;
+  background-image: url(https://html.designingmedia.com/eluxen/assets/images/cta-bg-img.jpg);
+    background-size: 120%;
+  background-position: center left;
+  /* background-repeat: no-repeat; */
+  position: relative;
+  border-radius: 30px; 
+  overflow: hidden;  
+}
+.premium-care-image{
+  background-color: black;
+  padding: 40px;
+  
+}
+.premium-care::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.premium-care-content .tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #f5b942;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.premium-care-content h2 {
+  font-size: 60px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .premium-care {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
+  .premium-care-content h2 {
+    font-size: 28px;
+  }
+}

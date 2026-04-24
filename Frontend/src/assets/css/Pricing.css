@@ -149,9 +149,9 @@ background-color: #3460fc;
 
 .features-list li::before {
   content: "✓";
-  color: #3460fc;
+  color: #f5b942;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 18px;
   flex-shrink: 0;
 }
 
