@@ -19,9 +19,12 @@ import AdminPricing from './admin/AdminPricing';
 import OurProcess from './components/OurProcess';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
+import PremiumCare from './components/PremiumCare';
+import Contact from './components/Contact';
+import AdminContacts from './admin/AdminContacts';
 import AdminTestimonials from './admin/AdminTestimonials';
 import AdminFAQ from './admin/AdminFAQ';
-import PremiumCare from './components/PremiumCare';
+import Footer from './components/Footer_1';
 
 function App() {
   return (
@@ -43,6 +46,8 @@ function App() {
               <Testimonials />
               <PremiumCare />
               <FAQ />
+              <Contact />
+              <Footer />
             </>
           }
         />
@@ -56,6 +61,7 @@ function App() {
           <Route path="pricing" element={<AdminPricing />} />
           <Route path="testimonials" element={<AdminTestimonials />} />
           <Route path="faq" element={<AdminFAQ />} />
+          <Route path="contacts" element={<AdminContacts />} />
         </Route>
 
       </Routes>

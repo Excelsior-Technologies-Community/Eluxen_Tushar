@@ -13,6 +13,8 @@ const navItems = [
       { label: "Pricing",    path: "/admin/pricing" },
       { label: "Testimonials", path: "/admin/testimonials" },
       { label: "FAQ", path: "/admin/faq" },
+      { label: "Contacts", path: "/admin/contacts" },
+
 
     ],
   },

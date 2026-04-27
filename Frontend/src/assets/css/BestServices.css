@@ -5,9 +5,9 @@
 .servicesHeading {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     gap: 50px;
-    padding: 0 40px;
+    padding: 0 60px;
 }
 
 .servicesHeading h1 {
@@ -15,12 +15,14 @@
     width: 60%;
 }
 .servicesHeading p {
-    font-size: 18px;
-    width: 70%;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    width: 60%;
 }
-.best-services span{
-    color: #fff;;
-    padding: 0 40px;
+.Bs-spn{
+    color: #facc15;;
+    padding: 0 60px;
 }
 
 
@@ -198,4 +200,16 @@
   .serviceCard {
     height: 280px;
   }
+}
+
+.servicesHeading-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.servicesHeading-btn {
+  flex-shrink: 0;
+  align-self: flex-end;
+  padding-bottom: 90px;
 }
