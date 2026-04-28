@@ -8,6 +8,16 @@ import BestServices from "./components/BestServices";
 import CounterSection from './components/CounterSection';
 import AboutUs from './components/AboutUs';
 import Pricing from './components/Pricing'; 
+import OurProcess from './components/OurProcess';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
+import PremiumCare from './components/PremiumCare';
+import Contact from './components/Contact';
+import Footer from './components/Footer_1';
+
+// Pages
+import About from './pages/About';
+import Services from './pages/Services';
 
 // Admin components
 import AdminLayout from "./admin/AdminLayout";
@@ -16,22 +26,18 @@ import AdminServices from "./admin/AdminServices";
 import AdminHero from "./admin/AdminHero";
 import AdminAbout from './admin/AdminAbout';
 import AdminPricing from './admin/AdminPricing'; 
-import OurProcess from './components/OurProcess';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import PremiumCare from './components/PremiumCare';
-import Contact from './components/Contact';
 import AdminContacts from './admin/AdminContacts';
 import AdminTestimonials from './admin/AdminTestimonials';
+import AdminPageHero from './admin/AdminPageHero';
 import AdminFAQ from './admin/AdminFAQ';
-import Footer from './components/Footer_1';
+import PricingPage from './pages/PricingPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
 
-        {/*  WEBSITE */}
+        {/* HOMEPAGE */}
         <Route
           path="/"
           element={
@@ -52,7 +58,16 @@ function App() {
           }
         />
 
-        {/*  ADMIN PANEL */}
+        {/* ABOUT PAGE */}
+        <Route path="/about" element={<About />} />
+
+        {/* SERVICES PAGE */}
+        <Route path="/services" element={<Services />} />
+
+        {/* PRICING PAGE */}
+        <Route path="/pricing" element={<PricingPage />} />
+
+        {/* ADMIN PANEL */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="hero" element={<AdminHero />} />
@@ -62,6 +77,7 @@ function App() {
           <Route path="testimonials" element={<AdminTestimonials />} />
           <Route path="faq" element={<AdminFAQ />} />
           <Route path="contacts" element={<AdminContacts />} />
+          <Route path="page-hero" element={<AdminPageHero />} />
         </Route>
 
       </Routes>

@@ -1,0 +1,170 @@
+.about2-wrapper {
+  padding: 60px;
+  background: #000;
+}
+
+.about2-box {
+  display: flex;
+  gap: 60px;
+  /* background: linear-gradient(135deg, #3c5dfc, #4a6cf7); */
+  border-radius: 30px;
+  /* padding: 10px 0px; */
+  color: white;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LEFT — single image */
+.about2-image {
+  flex-shrink: 0;
+  width: 650px;
+}
+
+.about2-image img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* RIGHT content — same as AboutUs */
+.about2-content {
+  flex: 1;
+  z-index: 1;
+}
+
+.about2-content .tag {
+  color: #ffd54f;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.about2-content h1 {
+  font-size: 68px;
+  font-weight: 700;
+  margin: 20px 0 0px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.15;
+}
+
+.about2-content .desc {
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 18px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.about2-content .desc span {
+  background: none !important;
+}
+
+.about2-content .points p {
+  margin: 20px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.about2-content .about-btn {
+  margin-top: 24px;
+  background: #ffd54f;
+  color: black;
+  padding: 18px 30px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.about2-content .about-btn span {
+  margin-left: 20px;
+  background-color: #0b0b0b;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 15px;
+}
+
+/* Car vector */
+.about2-box .car-vector {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
+.points{
+  margin-bottom: 50px;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+  .about2-wrapper {
+    padding: 40px 24px;
+  }
+
+  .about2-box {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .about2-image {
+    width: 100%;
+  }
+
+  .about2-image img {
+    width: 100%;
+    height: 320px;
+  }
+
+  .about2-content h1 {
+    font-size: 40px;
+  }
+
+  .about2-content .desc {
+    font-size: 16px;
+  }
+
+  .about2-box .car-vector {
+    display: none;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .about2-wrapper {
+    padding: 24px 14px;
+  }
+
+  .about2-box {
+    padding: 28px 18px;
+    border-radius: 20px;
+    gap: 24px;
+  }
+
+  .about2-image img {
+    height: 240px;
+  }
+
+  .about2-content h1 {
+    font-size: 28px;
+    margin: 12px 0;
+  }
+
+  .about2-content .desc {
+    font-size: 14px;
+  }
+
+  .about2-content .about-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

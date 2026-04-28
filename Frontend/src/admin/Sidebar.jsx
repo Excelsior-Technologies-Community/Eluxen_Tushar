@@ -14,6 +14,8 @@ const navItems = [
       { label: "Testimonials", path: "/admin/testimonials" },
       { label: "FAQ", path: "/admin/faq" },
       { label: "Contacts", path: "/admin/contacts" },
+      { label: "Page Heroes", path: "/admin/page-hero" },
+
 
 
     ],
