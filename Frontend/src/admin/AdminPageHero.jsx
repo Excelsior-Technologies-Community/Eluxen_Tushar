@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../assets/css/AdminServices.css";
 
-const PAGES = ["about", "services", "pricing", "contact", "faq"];
+const PAGES = ["about", "services", "pricing", "contact", "faq", "team"];
 
 const emptyForm = {
   page: "about",

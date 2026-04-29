@@ -31,6 +31,9 @@ import AdminTestimonials from './admin/AdminTestimonials';
 import AdminPageHero from './admin/AdminPageHero';
 import AdminFAQ from './admin/AdminFAQ';
 import PricingPage from './pages/PricingPage';
+import TeamPage from './pages/TeamPage';
+import AdminTeam from './admin/AdminTeam';
+import AdminGallery from './pages/AdminGallery';
 
 function App() {
   return (
@@ -67,6 +70,10 @@ function App() {
         {/* PRICING PAGE */}
         <Route path="/pricing" element={<PricingPage />} />
 
+        {/* Team PAGE */}
+        <Route path="/team" element={<TeamPage />} />
+
+        
         {/* ADMIN PANEL */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
@@ -78,6 +85,8 @@ function App() {
           <Route path="faq" element={<AdminFAQ />} />
           <Route path="contacts" element={<AdminContacts />} />
           <Route path="page-hero" element={<AdminPageHero />} />
+          <Route path="team" element={<AdminTeam />} />
+          <Route path="/admin/gallery" element={<AdminGallery />} />
         </Route>
 
       </Routes>

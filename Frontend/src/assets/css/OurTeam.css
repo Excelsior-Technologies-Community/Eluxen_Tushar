@@ -1,0 +1,148 @@
+.our-team {
+  padding: 80px 0 100px;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+/* HEADER — center aligned */
+.team-header {
+  text-align: center;
+  padding: 0 320px;
+  margin-bottom: 60px;
+}
+
+.team-header .tag {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f5b942;
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.team-header h2 {
+  font-size: 58px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* GRID — 4 columns with gap */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 24px;
+  padding: 0 60px;
+}
+
+/* CARD */
+.team-card {
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+/* IMAGE */
+.team-img-wrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.team-img-wrap img {
+  width: 100%;
+  /* aspect-ratio: 3 / 4; */
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.team-card:hover .team-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* INFO — center aligned */
+.team-info {
+  text-align: center;
+}
+
+.team-info h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.team-info > span {
+  font-size: 14px;
+  color: #aaa;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* SOCIAL ICONS */
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-social a {
+  width: 42px;
+  height: 42px;
+  background: #3460fc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.team-social a:hover {
+  background: #f5b942;
+  transform: translateY(-3px);
+}
+
+.team-social svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+  }
+
+  .team-header h2 {
+    font-size: 36px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .our-team {
+    padding: 50px 0 60px;
+  }
+
+  .team-header {
+    padding: 0 20px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+    gap: 0 12px;
+  }
+
+  .team-header h2 {
+    font-size: 28px;
+  }
+}

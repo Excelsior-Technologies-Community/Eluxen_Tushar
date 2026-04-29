@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import Pricing from "../components/Pricing";
 import CounterItem from "../components/CounterItem";
 import CounterSection from "../components/CounterSection";
+import Gallery from "../components/Gallery";
 
 const PricingPage = () => {
   return (
@@ -16,6 +17,7 @@ const PricingPage = () => {
         <PageHero pageName="pricing" />
       </div>
       <Pricing />
+      <Gallery />
       <CounterSection/>
       <PremiumCare />
       <Contact />

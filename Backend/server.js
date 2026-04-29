@@ -12,6 +12,9 @@ const testimonialRoutes = require("./routes/testimonialRoutes");
 const faqRoutes = require("./routes/faqRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const pageHeroRoutes = require("./routes/pageHeroRoutes");
+const teamRoutes = require("./routes/teamRoutes");
+const galleryRoutes = require("./routes/galleryRoutes");
+
 
 
 const app = express();
@@ -31,6 +34,7 @@ app.use("/api/testimonials", testimonialRoutes);
 app.use("/api/faqs", faqRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/page-hero", pageHeroRoutes);
-
+app.use("/api/team", teamRoutes);
+app.use("/api/gallery", galleryRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));

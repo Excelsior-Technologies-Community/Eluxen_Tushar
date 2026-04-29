@@ -8,6 +8,7 @@ const pagesLinks = [
   { label: "Services", href: "/services" },
   { label: "FAQ's", href: "/faq" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Team", href: "/team" },
 ];
 
 const blogLinks = [
@@ -52,7 +53,6 @@ const Navbar = () => {
             <li className="active"><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
-
             {/* Pages dropdown */}
             <li
               className="has-dropdown"
