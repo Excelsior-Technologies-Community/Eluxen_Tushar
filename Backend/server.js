@@ -14,6 +14,7 @@ const contactRoutes = require("./routes/contactRoutes");
 const pageHeroRoutes = require("./routes/pageHeroRoutes");
 const teamRoutes = require("./routes/teamRoutes");
 const galleryRoutes = require("./routes/galleryRoutes");
+const blogRoutes = require("./routes/blogRoutes");
 
 
 
@@ -36,5 +37,7 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/page-hero", pageHeroRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/gallery", galleryRoutes);
+app.use("/api/blogs", blogRoutes);
+
 
 app.listen(5000, () => console.log("Server running on port 5000"));

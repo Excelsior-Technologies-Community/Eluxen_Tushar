@@ -18,6 +18,12 @@ import Footer from './components/Footer_1';
 // Pages
 import About from './pages/About';
 import Services from './pages/Services';
+import PricingPage from './pages/PricingPage';
+import TeamPage from './pages/TeamPage';
+import AdminBlog from './admin/AdminBlog';
+import Blog from './pages/Blog';
+import SingleBlog from './pages/SingleBlog';
+
 
 // Admin components
 import AdminLayout from "./admin/AdminLayout";
@@ -30,10 +36,8 @@ import AdminContacts from './admin/AdminContacts';
 import AdminTestimonials from './admin/AdminTestimonials';
 import AdminPageHero from './admin/AdminPageHero';
 import AdminFAQ from './admin/AdminFAQ';
-import PricingPage from './pages/PricingPage';
-import TeamPage from './pages/TeamPage';
 import AdminTeam from './admin/AdminTeam';
-import AdminGallery from './pages/AdminGallery';
+import AdminGallery from './admin/AdminGallery';
 
 function App() {
   return (
@@ -61,17 +65,12 @@ function App() {
           }
         />
 
-        {/* ABOUT PAGE */}
         <Route path="/about" element={<About />} />
-
-        {/* SERVICES PAGE */}
         <Route path="/services" element={<Services />} />
-
-        {/* PRICING PAGE */}
         <Route path="/pricing" element={<PricingPage />} />
-
-        {/* Team PAGE */}
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<SingleBlog />} />
 
         
         {/* ADMIN PANEL */}
@@ -86,7 +85,8 @@ function App() {
           <Route path="contacts" element={<AdminContacts />} />
           <Route path="page-hero" element={<AdminPageHero />} />
           <Route path="team" element={<AdminTeam />} />
-          <Route path="/admin/gallery" element={<AdminGallery />} />
+          <Route path="gallery" element={<AdminGallery />} />
+          <Route path="blog" element={<AdminBlog />} />
         </Route>
 
       </Routes>

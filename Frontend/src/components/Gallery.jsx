@@ -30,7 +30,7 @@ const Gallery = () => {
           >
             <img src={img.image} alt="" />
 
-            <div className="overlay">
+            <div className="overlayItem">
               <span>+</span>
             </div>
           </div>

@@ -16,8 +16,7 @@ const navItems = [
       { label: "Contacts", path: "/admin/contacts" },
       { label: "Page Heroes", path: "/admin/page-hero" },
       { label: "Team", path: "/admin/team" },
-      { label: "Gallery", path: "/admin/gallery" },
-
+      { label: "Blog", path: "/admin/blog" },
 
 
 
