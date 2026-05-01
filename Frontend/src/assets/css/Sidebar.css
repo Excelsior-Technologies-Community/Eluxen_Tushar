@@ -1,26 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&display=swap');
+
 .sidebar {
-  width: 250px;
-  /* height: 100%; */
-  background: #0f172a;
-  color: white;
+  width: 240px;
+  min-height: 100vh;
+  background: #040404;
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  /* justify-content: space-between; */
+  border-right: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  font-family: 'Syne', sans-serif;
 }
 
+/* LOGO */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 24px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar-logo-dot {
+  flex-shrink: 0;
+}
+.login-logo {
+  width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+.sidebar-logo span {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: 0.5px;
+}
+
+/* NAV */
+.sidebar-nav {
+  flex: 1;
+  padding: 8px 0;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 16px 24px 8px;
+  margin: 0;
+}
+
+/* NAV ITEM */
 .nav-item {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
   cursor: pointer;
-  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #888;
+  transition: color 0.15s, background 0.15s;
+  position: relative;
+  border-radius: 0;
+  margin: 0;
 }
 
+.nav-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ddd;
+  flex-shrink: 0;
+  transition: background 0.15s, transform 0.15s;
+}
 
 .nav-item:hover {
-  background: #1e293b;
+  color: #0a0a0a;
+  background: #f5b942a5;
+}
+
+.nav-item:hover .nav-dot {
+  background: #f4b63a;
+  transform: scale(1.5);
 }
 
 .nav-item.active {
-  background: #facc15;
-  color: black;
+  color: #0a0a0a;
+  background: #f4b63a;
+  font-weight: 700;
+}
+
+.nav-item.active .nav-dot {
+  background: #f5b942;
+  width: 6px;
+  height: 6px;
+}
+
+/* BOTTOM */
+.sidebar-bottom {
+  border-top: 1px solid #e5e7eb;
+  padding: 8px 0 16px;
+}
+
+.logout-item {
+  color: #bbb;
+}
+
+.logout-item:hover {
+  color: #ef4444;
+  background: #fff5f5;
+}
+
+.logout-item:hover .nav-dot {
+  background: #ef4444;
 }

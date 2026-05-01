@@ -1,5 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./admin/ProtectedRoute";
 
 // Website components
 import Navbar from "./components/Navbar";
@@ -20,12 +22,11 @@ import About from './pages/About';
 import Services from './pages/Services';
 import PricingPage from './pages/PricingPage';
 import TeamPage from './pages/TeamPage';
-import AdminBlog from './admin/AdminBlog';
 import Blog from './pages/Blog';
 import SingleBlog from './pages/SingleBlog';
 
-
 // Admin components
+import AdminLogin from "./admin/AdminLogin";
 import AdminLayout from "./admin/AdminLayout";
 import Dashboard from "./admin/Dashboard";
 import AdminServices from "./admin/AdminServices";
@@ -38,16 +39,16 @@ import AdminPageHero from './admin/AdminPageHero';
 import AdminFAQ from './admin/AdminFAQ';
 import AdminTeam from './admin/AdminTeam';
 import AdminGallery from './admin/AdminGallery';
+import AdminBlog from './admin/AdminBlog';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
 
-        {/* HOMEPAGE */}
-        <Route
-          path="/"
-          element={
+          {/* HOMEPAGE */}
+          <Route path="/" element={
             <>
               <Navbar />
               <Hero />
@@ -62,35 +63,42 @@ function App() {
               <Contact />
               <Footer />
             </>
-          }
-        />
+          } />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<SingleBlog />} />
+          {/* PAGES */}
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<SingleBlog />} />
 
-        
-        {/* ADMIN PANEL */}
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="hero" element={<AdminHero />} />
-          <Route path="services" element={<AdminServices />} />
-          <Route path="about" element={<AdminAbout />} />
-          <Route path="pricing" element={<AdminPricing />} />
-          <Route path="testimonials" element={<AdminTestimonials />} />
-          <Route path="faq" element={<AdminFAQ />} />
-          <Route path="contacts" element={<AdminContacts />} />
-          <Route path="page-hero" element={<AdminPageHero />} />
-          <Route path="team" element={<AdminTeam />} />
-          <Route path="gallery" element={<AdminGallery />} />
-          <Route path="blog" element={<AdminBlog />} />
-        </Route>
+          {/* ADMIN LOGIN */}
+          <Route path="/admin/login" element={<AdminLogin />} />
 
-      </Routes>
-    </BrowserRouter>
+          {/* ADMIN PANEL — Protected */}
+          <Route path="/admin" element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }>
+            <Route index element={<Dashboard />} />
+            <Route path="hero" element={<AdminHero />} />
+            <Route path="services" element={<AdminServices />} />
+            <Route path="about" element={<AdminAbout />} />
+            <Route path="pricing" element={<AdminPricing />} />
+            <Route path="testimonials" element={<AdminTestimonials />} />
+            <Route path="faq" element={<AdminFAQ />} />
+            <Route path="contacts" element={<AdminContacts />} />
+            <Route path="page-hero" element={<AdminPageHero />} />
+            <Route path="team" element={<AdminTeam />} />
+            <Route path="gallery" element={<AdminGallery />} />
+            <Route path="blog" element={<AdminBlog />} />
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
