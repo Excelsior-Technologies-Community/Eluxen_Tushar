@@ -1,91 +1,257 @@
-.gallery {
-  padding: 80px 0;
-  background: #0a0a0a;
+/* ============================================================
+   Gallery Admin — CSS
+   Aesthetic: Dark industrial / photo-lab darkroom
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap');
+
+/* ── Reset / Root ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #f5f7fb;
+  --surface:     #ffffff;
+  --surface-2:   #f0f0ee;
+  --border:      #e0e0dc;
+  --accent:      #1a1a1a;
+  --accent-dim:  #333333;
+  --text:        #1a1a1a;
+  --text-muted:  #999994;
+  --danger:      #e53e3e;
+  --danger-dim:  #c53030;
+  --radius:      10px;
+  --transition:  200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+}
+
+/* ── Page wrapper ─────────────────────────────────────────── */
+.gallery-admin {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.03) 0%, transparent 60%);
+  color: var(--text);
+  font-family: var(--font-mono);
+  padding: 48px 40px;
+}
+
+/* ── Page heading ─────────────────────────────────────────── */
+.gallery-admin h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gallery-admin h2::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+/* ── Upload bar ───────────────────────────────────────────── */
+.upload-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 36px;
+  width: fit-content;
+}
+
+/* File input — hide native, style the label if wrapping;
+   or style it directly as below */
+.upload-bar input[type="file"] {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.upload-bar input[type="file"]::file-selector-button {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+  margin-right: 12px;
+}
+
+.upload-bar input[type="file"]::file-selector-button:hover {
+  background: var(--border);
+  border-color: #444;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+button {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Upload button */
+.btn-upload {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 8px 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.btn-upload:hover {
+  background: var(--accent-dim);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Delete button */
+.btn-delete {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.btn-delete:hover {
+  background: var(--danger);
   color: #fff;
+  border-color: var(--danger);
+  box-shadow: 0 0 12px rgba(255, 71, 71, 0.25);
 }
 
-.gallery-header {
-  text-align: center;
-  margin-bottom: 50px;
-  padding: 0 400px;
-}
-
-.gallery-header .tag {
-  color: #f5b942;
-  letter-spacing: 3px;
-  font-size: 13px;
-}
-
-.gallery-header h2 {
-  font-size: 62px;
-}
-
-/* GRID */
+/* ── Sortable grid ────────────────────────────────────────── */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 0 60px;
+  margin-top: 8px;
 }
 
-/* ITEM */
-.gallery-item {
+@media (max-width: 1100px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Sortable card ────────────────────────────────────────── */
+.sortable-card {
   position: relative;
-  overflow: hidden;
-  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px;
+  cursor: grab;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+  user-select: none;
 }
 
-/* IMAGE */
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.5s;
+.sortable-card:hover {
+  border-color: #c0c0bc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* ZOOM EFFECT */
-.gallery-item:hover img {
-  transform: scale(1.1);
+.sortable-card:active {
+  cursor: grabbing;
 }
 
-/* OVERLAY */
-.overlayItem {
+/* Drag-over / active state — add this class via dnd-kit if needed */
+.sortable-card.dragging {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent), 0 16px 40px rgba(0,0,0,0.12);
+  transform: rotate(1.5deg) scale(1.03);
+  z-index: 10;
+}
+
+/* Drag handle hint — top-right dots */
+.sortable-card::before {
+  content: '⠿';
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 8px;
+  right: 10px;
+  font-size: 1rem;
+  color: var(--text-muted);
   opacity: 0;
-  transition: 0.3s;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
 
-/* SHOW OVERLAY */
-.gallery-item:hover .overlayItem {
+.sortable-card:hover::before {
   opacity: 1;
 }
 
-/* PLUS ICON */
-.overlayItem span {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 80px;
-  font-weight: 400;
-  color: #ffffff58;
-  /* border: 2px solid #fff; */
-  padding: 10px 18px;
-  /* border-radius: 50%; */
+/* ── Card image ───────────────────────────────────────────── */
+.sortable-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  pointer-events: none;
+  transition: filter var(--transition);
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.sortable-card:hover img {
+  filter: brightness(0.95);
 }
 
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 0 20px;
-  }
+/* ── Empty state ──────────────────────────────────────────── */
+.gallery-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  letter-spacing: 0.05em;
 }

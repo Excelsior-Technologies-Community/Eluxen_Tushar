@@ -27,7 +27,6 @@ body {
   backdrop-filter: blur(15px);
   padding: 10px 20px;
   border-radius: 12px;
-  
 }
 
 .menu-box > ul {
@@ -50,26 +49,32 @@ body {
   position: relative;
   user-select: none;
 }
+
 .menu-box > ul > li > a {
   text-decoration: none;
-   color: #fff;
-  cursor: pointer;
-  /* padding: 8px 15px; */
-  /* border-radius: 8px; */
-  transition: background 0.2s;
+  color: #fff;
   white-space: nowrap;
-  /* font-size: 15px; */
   position: relative;
   user-select: none;
-
 }
 
 .menu-box > ul > li:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
+/* ===== ACTIVE STATES ===== */
 .menu-box > ul > li.active {
   background: #3460fc;
+}
+
+.menu-box > ul > li.active > a {
+  color: #fff;
+}
+
+.menu-box > ul > li.has-dropdown.active {
+  background: #3460fc;
+  color: #fff;
+  font-weight: 600;
 }
 
 /* ===== DROPDOWN ===== */
@@ -89,7 +94,7 @@ body {
   list-style: none;
   margin: 0;
   z-index: 999;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   animation: fadeDown 0.15s ease;
 }
 
@@ -116,6 +121,12 @@ body {
 .dropdown li a:hover {
   background: #3460fc;
   color: #fff;
+}
+
+.dropdown li.active > a {
+  background: #3460fc;
+  color: #fff;
+  border-radius: 6px;
 }
 
 /* ===== RIGHT SIDE ===== */
@@ -146,7 +157,7 @@ body {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 10px;
   border-radius: 8px;
 }
@@ -204,8 +215,22 @@ body {
   transition: background 0.2s;
 }
 
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .mobile-menu ul li:hover {
   background: #3460fc;
+}
+
+.mobile-menu ul li.active {
+  background: #3460fc;
+}
+
+.mobile-menu ul li.active > a {
+  color: #fff;
+  font-weight: 700;
 }
 
 .mobile-close {
@@ -215,7 +240,7 @@ body {
   color: #fff;
   font-size: 26px;
   cursor: pointer;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 8px;
   width: 40px;
@@ -228,8 +253,17 @@ body {
 .menu-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+}
+
+/* ===== CENTER DOM ===== */
+.centerDom {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 }
 
 /* ===== TABLET (≤1024px) ===== */
@@ -267,12 +301,3 @@ body {
     display: flex;
   }
 }
-
-
-.centerDom {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-} 

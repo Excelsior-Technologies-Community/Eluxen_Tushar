@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../assets/css/Navbar.css";
 import ContactButton from "./ContactButton";
+import { useLocation } from "react-router-dom";
 
 const pagesLinks = [
   { label: "About", href: "/about" },
@@ -18,15 +19,29 @@ const blogLinks = [
   { label: "Two Column", href: "/two-column" },
 ];
 
+const standaloneRoutes = ["/", "/about", "/services", "/pricing"];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [pagesOpen, setPagesOpen] = useState(false);
   const [blogOpen, setBlogOpen] = useState(false);
+  const [pagesClicked, setPagesClicked] = useState(false);
+
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const pagesRef = useRef(null);
   const blogRef = useRef(null);
 
-  // Close dropdowns on outside click
+  const isBlogActive = blogLinks.some((link) => link.href === currentPath);
+
+  // If user navigates to a standalone route, deactivate pages highlight
+  useEffect(() => {
+    if (standaloneRoutes.includes(currentPath)) {
+      setPagesClicked(false);
+    }
+  }, [currentPath]);
+
   useEffect(() => {
     const handleClick = (e) => {
       if (pagesRef.current && !pagesRef.current.contains(e.target)) setPagesOpen(false);
@@ -47,61 +62,73 @@ const Navbar = () => {
 
         {/* CENTER MENU */}
         <div className="centerDom">
+          <div className="menu-box">
+            <ul>
+              <li className={currentPath === "/" ? "active" : ""}>
+                <a href="/">Home</a>
+              </li>
+              <li className={currentPath === "/about" ? "active" : ""}>
+                <a href="/about">About</a>
+              </li>
+              <li className={currentPath === "/services" ? "active" : ""}>
+                <a href="/services">Services</a>
+              </li>
 
-        <div className="menu-box">
-          <ul>
-            <li className="active"><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            {/* Pages dropdown */}
-            <li
-              className="has-dropdown"
-              ref={pagesRef}
-              onClick={() => { setPagesOpen(!pagesOpen); setBlogOpen(false); }}
+              {/* Pages dropdown */}
+              <li
+                className={`has-dropdown ${pagesClicked ? "active" : ""}`}
+                ref={pagesRef}
+                onClick={() => {
+                  setPagesOpen(!pagesOpen);
+                  setPagesClicked(true);
+                  setBlogOpen(false);
+                }}
               >
-              Pages ▾
-              {pagesOpen && (
-                <ul className="dropdown">
-                  {pagesLinks.map((link) => (
-                    <li key={link.label}>
-                      <a href={link.href}>{link.label}</a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
+                Pages ▾
+                {pagesOpen && (
+                  <ul className="dropdown">
+                    {pagesLinks.map((link) => (
+                      <li key={link.label} className={currentPath === link.href ? "active" : ""}>
+                        <a href={link.href} onClick={(e) => e.stopPropagation()}>{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
 
-            <li><a href="/pricing">Pricing</a></li> 
+              <li className={currentPath === "/pricing" ? "active" : ""}>
+                <a href="/pricing">Pricing</a>
+              </li>
 
-            {/* Blog dropdown */}
-            <li
-              className="has-dropdown"
-              ref={blogRef}
-              onClick={() => { setBlogOpen(!blogOpen); setPagesOpen(false); }}
+              {/* Blog dropdown */}
+              <li
+                className={`has-dropdown ${isBlogActive ? "active" : ""}`}
+                ref={blogRef}
+                onClick={() => { setBlogOpen(!blogOpen); setPagesOpen(false); }}
               >
-              Blog ▾
-              {blogOpen && (
-                <ul className="dropdown">
-                  {blogLinks.map((link) => (
-                    <li key={link.label}>
-                      <a href={link.href}>{link.label}</a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          </ul>
-        </div>
+                Blog ▾
+                {blogOpen && (
+                  <ul className="dropdown">
+                    {blogLinks.map((link) => (
+                      <li key={link.label} className={currentPath === link.href ? "active" : ""}>
+                        <a href={link.href} onClick={(e) => e.stopPropagation()}>{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            </ul>
+          </div>
 
-        {/* RIGHT */}
-        <div className="right">
-          <ContactButton text="Contact us" bgColor="#f5b942" />
-          <div className="phone">
-            <img src="https://html.designingmedia.com/eluxen/assets/images/phone-icon.png" alt="phone" />
-            +5689 2589 6325
+          {/* RIGHT */}
+          <div className="right">
+            <ContactButton text="Contact us" bgColor="#f5b942" />
+            <div className="phone">
+              <img src="https://html.designingmedia.com/eluxen/assets/images/phone-icon.png" alt="phone" />
+              +5689 2589 6325
+            </div>
           </div>
         </div>
-              </div>
 
         {/* HAMBURGER */}
         <div className="hamburger" onClick={() => setMenuOpen(true)}>
@@ -109,19 +136,18 @@ const Navbar = () => {
           <span></span>
           <span></span>
         </div>
-
       </header>
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <button className="mobile-close" onClick={() => setMenuOpen(false)}>✕</button>
         <ul>
-          <li onClick={() => setMenuOpen(false)}>Home</li>
-          <li onClick={() => setMenuOpen(false)}>About</li>
-          <li onClick={() => setMenuOpen(false)}>Services</li>
-          <li onClick={() => setMenuOpen(false)}>Pricing</li>
-          <li onClick={() => setMenuOpen(false)}>FAQ</li>
-          <li onClick={() => setMenuOpen(false)}>Contact</li>
+          <li className={currentPath === "/" ? "active" : ""} onClick={() => setMenuOpen(false)}><a href="/">Home</a></li>
+          <li className={currentPath === "/about" ? "active" : ""} onClick={() => setMenuOpen(false)}><a href="/about">About</a></li>
+          <li className={currentPath === "/services" ? "active" : ""} onClick={() => setMenuOpen(false)}><a href="/services">Services</a></li>
+          <li className={currentPath === "/pricing" ? "active" : ""} onClick={() => setMenuOpen(false)}><a href="/pricing">Pricing</a></li>
+          <li className={currentPath === "/faq" ? "active" : ""} onClick={() => setMenuOpen(false)}><a href="/faq">FAQ</a></li>
+          <li className={currentPath === "/contact" ? "active" : ""} onClick={() => setMenuOpen(false)}><a href="/contact">Contact</a></li>
         </ul>
       </div>
 
