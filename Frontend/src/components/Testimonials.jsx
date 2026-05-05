@@ -56,6 +56,7 @@ const Testimonials = () => {
               onClick={() => setActive(i)}
               />
             ))}
+            
             </div>
           </div>
         </div>

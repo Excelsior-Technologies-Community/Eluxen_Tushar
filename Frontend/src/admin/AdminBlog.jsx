@@ -94,7 +94,7 @@ const AdminBlog = () => {
       {/* BLOG LIST */}
       <div className="blog-list">
         {visibleBlogs.map((item) => (
-          <div key={item._id} className="card">
+          <div key={item._id} className="blogCard">
             <div className="card-inner">
               {item.image && <img src={item.image} alt={item.title} className="card-thumb" />}
               <div className="card-body">

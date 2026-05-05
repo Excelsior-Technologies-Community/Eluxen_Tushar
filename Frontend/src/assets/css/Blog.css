@@ -56,11 +56,6 @@
   /* transition: transform 0.3s, border-color 0.3s; */
 }
 
-.blog-card:hover {
-  /* transform: translateY(-6px); */
-  /* border-color: #f5b942; */
-}
-
 /* IMAGE */
 .blog-img-wrap {
   width: 100%;
@@ -76,9 +71,6 @@
   display: block;
 }
 
-.blog-card:hover .blog-img-wrap img {
-  /* transform: scale(1.05); */
-}
 
 /* CONTENT */
 .blog-content {
@@ -353,4 +345,11 @@
     width: 100%;
     justify-content: flex-end;
   }
+}
+.blogCard{
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: box-shadow 0.2s;
 }

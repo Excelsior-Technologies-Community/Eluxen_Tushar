@@ -6,9 +6,8 @@
 .about2-box {
   display: flex;
   gap: 60px;
-  /* background: linear-gradient(135deg, #3c5dfc, #4a6cf7); */
   border-radius: 30px;
-  /* padding: 10px 0px; */
+
   color: white;
   align-items: center;
   position: relative;
